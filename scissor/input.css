@@ -1,0 +1,388 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --font-family: "Gilroy-Regular ☞";
+    --font-family-medium: "Gilroy-Medium ☞";
+    --font-family-Bold: "Gilroy-Bold ☞";
+    --font-family-heavy: "Gilroy-Heavy ☞";
+
+    --primary-background-gradient: linear-gradient(180deg, #1E3448 99.99%, rgba(30, 52, 72, 0) 100%);
+    --background-color: hsla(0, 0%, 100%, 1);
+    --primary-color: hsla(216, 100%, 50%, 1);
+    --secondary-color: hsla(0, 0%, 100%, 1);
+    --tertiary-color: hsla(210, 55%, 98%, 1);
+
+    --color: hsla(0, 0%, 8%, 1);
+
+    --font-weight: 500;
+    --font-size: 0.8rem;
+    --line-height: 1.5;
+    --h1-font-size: 1.5rem;
+    --h1-font-weight: 700;
+
+    --border-color: #D6D6D6;
+
+    --form-color: hsla(211, 35%, 17%, 1);
+    --form-background-color: hsla(0, 0%, 100%, 1);
+    --form-inputs-border: 1px solid var(--primary-color);
+    --form-input-color: var(--color);
+    --form-input-background-color: hsla(216, 16%, 94%, 1);
+    --input-placeholder-color: hsla(213, 10%, 44%, 1);
+    --form-button-color: hsla(0, 0%, 100%, 1);
+
+    --max-width: 2280px;
+    --contents-max-width: 60rem;
+}
+
+@layer base {
+
+    /* TODO: edit it later when you finsh in the html */
+    /* h1 {
+          @apply -text--h1-font-size -font--font-family-bold font-extrabold
+    }
+
+    h2 {
+          @apply -font--font-family-bold -text--h1-font-size
+    }
+
+    h3 {
+          @apply text-[1.2rem] -font--font-family-medium font-bold
+
+    }*/
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"] {
+        -webkit-appearance: none;
+        margin: 0;
+        -moz-appearance: textfield !important;
+    }
+
+
+    main nav.large_screen.active {
+        @apply backdrop-filter backdrop-blur-md bg-opacity-10 shadow bg-white
+    }
+
+
+    main nav.large_screen.inactive {
+        @apply bg-transparent
+    }
+
+
+    main nav.large_screen ul.links li a,
+    main nav.large_screen ul.links li span:nth-child(1),
+    main nav.large_screen div button {
+        @apply font-medium
+    }
+
+    main nav.large_screen ul.links li:nth-child(1) a, main nav.large_screen div button:first-child,
+    main nav.small_screen ul.links li:nth-child(1) a, main nav.small_screen div ul li:nth-child(6) button {
+        @apply -text--primary-color
+    }
+
+
+    main nav.large_screen ul li:nth-child(2) div.features ul li,
+    main nav.small_screen ul li:nth-child(2) div.features ul li {
+        @apply px-4 py-1 cursor-pointer transition-colors duration-500
+    }
+
+    main nav.large_screen ul li:nth-child(2) div.features ul li:nth-child(even),
+    main nav.small_screen ul li:nth-child(2) div.features ul li:nth-child(even) {
+        @apply my-1
+    }
+
+    main nav.large_screen ul li:nth-child(2) div.features ul li:hover,
+    main nav.small_screen ul li:nth-child(2) div.features ul li:hover {
+        @apply -bg--tertiary-color
+    }
+
+    main nav.large_screen ul li:nth-child(2) div.hide_features,
+    main nav.small_screen ul li:nth-child(2) div.hide_features {
+        @apply opacity-0 invisible
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    main div.contents_container section.optimize_possibilities div div div.posibilities div.child {
+        @apply grid grid-cols-4 grid-rows-1 max-lg:grid-cols-2 max-lg:grid-rows-2 gap-x-6 max-lg:gap-x-10 gap-y-4 max-md:gap-y-8
+    }
+
+    main div.contents_container section.optimize_possibilities div div div.posibilities div.child div {
+        @apply flex flex-col gap-2 text-center
+    }
+
+
+    /* TODO: edit it later when you finish in the html */
+    main div.contents_container section.optimize_possibilities div div div.posibilities div.child div h3 {
+        @apply text-[1.2rem] -font--font-family-medium font-bold
+    }
+
+    main div.contents_container section.optimize_possibilities div div div.posibilities div.child div p {
+        @apply max-w-[7rem] w-fit max-md:w-full
+    }
+
+    main div.contents_container section.optimize_possibilities div div div.posibilities div:nth-child(1) div:nth-child(2) p {
+        @apply pr-4 max-md:pr-0
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    main div.contents_container section.why_choose div div div.grid_contants {
+        @apply flex flex-col gap-y-4 w-fit
+    }
+
+    main div.contents_container section.why_choose div div div.grid_contants img {
+        @apply w-[2.5rem]
+    }
+
+    main div.contents_container section.why_choose div div div.grid_contants div h3 {
+        @apply text-[1.2rem] -font--font-family-medium
+    }
+
+    main div.contents_container section.why_choose div div div.grid_contants div p {
+        @apply max-w-[16rem] w-full
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    main div.contents_container section.pricing div.pricings_container div.price_panel {
+        @apply flex flex-col gap-y-3 -bg--background-color md:w-fit w-full h-fit md:py-6 p-8 md:px-14 rounded-lg overflow-hidden border -border--primary-color -shadow--shadow-pricing
+    }
+
+    main div.contents_container section.pricing div.pricings_container div.price_panel>p {
+        @apply text-[1rem] -font--font-family-medium font-bold
+    }
+
+    main div.contents_container section.pricing div.pricings_container div.price_panel>div {
+        @apply flex flex-col
+    }
+
+    main div.contents_container section.pricing div.pricings_container div.price_panel>div>h2 {
+        @apply -font--font-family-bold -text--h1-font-size
+    }
+
+    main div.contents_container section.pricing div.pricings_container div.price_panel>div>p {
+        @apply text-[0.9rem] -font--font-family-medium
+    }
+
+    main div.contents_container section.pricing div.pricings_container div.price_panel ul {
+        @apply flex flex-col gap-y-4 mt-2
+    }
+
+    main div.contents_container section.pricing div.pricings_container div.price_panel ul li {
+        @apply flex gap-2 items-center
+    }
+
+    main div.contents_container section.pricing div.pricings_container div.price_panel ul li img {
+        /* background-color: chartreuse; */
+    }
+
+
+    main div.contents_container section.pricing div.pricings_container div.price_panel:nth-child(1) {
+        @apply md:-mr-7 z-0
+    }
+
+    main div.contents_container section.pricing div.pricings_container div.price_panel:nth-child(2) {
+        @apply md:py-20 -bg--primary-background-gradient -text--secondary-color z-10
+    }
+
+    main div.contents_container section.pricing div.pricings_container div.price_panel:nth-child(3) {
+        @apply md:-ml-7 z-0
+    }
+
+
+
+
+
+
+
+
+
+    main div.contents_container section.trim_url form>div.grid_container input {
+        @apply outline-none border -border--primary-color px-2 h-[2rem] w-full py-2 rounded-md bg-transparent placeholder:-text--primary-color
+    }
+
+    main div.contents_container section.trim_url form>div.grid_container div.js-trim_url_domain {
+        @apply flex relative items-center justify-center md:col-span-1 max-md:col-span-2
+    }
+
+    main div.contents_container section.trim_url form>div.grid_container div.js-trim_url_domain ul {
+        @apply absolute left-0 top-10 rounded-md w-full h-fit -bg--secondary-color shadow-md overflow-hidden flex flex-col transition-opacity duration-700
+    }
+
+    main div.contents_container section.trim_url form>div.grid_container div.js-trim_url_domain ul>li {
+        @apply hover:-bg--tertiary-color px-2 py-1 cursor-pointer transition-colors duration-500
+    }
+
+    main div.contents_container section.trim_url form>div.grid_container div.js-trim_url_domain>input {
+        @apply cursor-default
+    }
+
+    main div.contents_container section.trim_url form>div.grid_container>input:nth-child(1) {
+        @apply col-span-2
+    }
+
+    main div.contents_container section.trim_url form>div.grid_container>div {
+        /*@apply bg-blue-500*/
+
+    }
+
+    .hide_trim_url_domain_dropdown {
+        @apply opacity-0 invisible
+    }
+
+    .show_trim_url_domain_dropdown {
+        @apply opacity-100 visible
+    }
+
+
+
+
+
+
+
+
+    main div.contents_container section.faq div.faq_container div.faq_questions {
+        @apply w-full flex flex-col h-fit px-2 py-2 border-b -border--border-color
+    }
+
+    main div.contents_container section.faq div.faq_container div.faq_questions>button {
+        @apply -font--font-family-medium flex items-center justify-between gap-x-4 my-[0.6rem] text-start
+    }
+
+    main div.contents_container section.faq div.faq_container div.faq_questions>button>span:nth-child(1) {
+        @apply w-[90%]
+    }
+
+    main div.contents_container section.faq div.faq_container div.faq_questions>button>span:nth-child(2)>img {
+        @apply w-[0.8rem]
+    }
+
+    main div.contents_container section.faq div.faq_container div.faq_questions div.faq_answers {
+        @apply cursor-default
+    }
+
+
+
+
+
+    main div.contents_container footer._footer div._footer_contents_container div._footer_logo_images_container div img {
+        @apply w-[1rem] max-lg:h-[1.1rem]
+    }
+
+    main div.contents_container footer._footer div._footer_contents_container div._footer_contents {
+        @apply flex flex-col md:gap-3 gap-8
+    }
+
+    main div.contents_container footer._footer div._footer_contents_container div._footer_contents div._footer_contents_sections {
+        @apply grid md:grid-cols-4 md:grid-rows-1 grid-cols-2 grid-rows-2 gap-x-8 max-lg:gap-x-7 max-md:gap-y-7
+    }
+
+    main div.contents_container footer._footer div._footer_contents_container div._footer_contents div._footer_contents_sections div {
+        @apply flex flex-col gap-y-2 w-[8rem] max-md:h-fit
+    }
+
+    main div.contents_container footer._footer div._footer_contents_container div._footer_contents div._footer_contents_sections div>h6 {
+        @apply font-semibold
+    }
+
+    main div.contents_container footer._footer div._footer_contents_container div._footer_contents div._footer_contents_sections div ul {
+        @apply flex flex-col gap-y-[0.2rem]
+    }
+
+}
+
+
+
+
+
+
+
+
+
+.faq_answers {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.2s;
+}
+
+.faq_answers>p {
+    overflow: hidden;
+}
+
+.faq_answers.active {
+    padding-bottom: 0.5rem
+        /* 8px */
+    ;
+    grid-template-rows: 1fr;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+main {
+    min-width: inherit;
+    min-height: inherit;
+    display: flex;
+    justify-content: center;
+    /* background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
+}
+
+
+/* background: hsla(216, 100%, 50%, 1);
+background: hsla(0, 0%, 8%, 1);
+background: hsla(0, 0%, 100%, 1);
+background: hsla(216, 100%, 44%, 1);
+background: hsla(0, 95%, 43%, 1);
+background: hsla(121, 90%, 25%, 1);
+background: hsla(50, 83%, 52%, 1); */
